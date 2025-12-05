@@ -9,4 +9,14 @@ class Teacher extends Model
 {
     use HasFactory;
     protected $guarded = ['created_at','updated_at'];
+
+    public function department(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Department::class);
+    }
+
+    public function designation(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Designation::class);
+    }
 }

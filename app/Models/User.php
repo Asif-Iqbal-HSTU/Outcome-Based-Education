@@ -49,4 +49,14 @@ class User extends Authenticatable
             'two_factor_confirmed_at' => 'datetime',
         ];
     }
+
+    public function faculties(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Faculty::class);
+    }
+
+    public function umissions(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Umission::class);
+    }
 }

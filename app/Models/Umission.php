@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Faculty extends Model
+class Umission extends Model
 {
+
     use HasFactory;
     protected $guarded = ['created_at','updated_at'];
 
@@ -15,13 +16,8 @@ class Faculty extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function departments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function peos(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Department::class);
-    }
-
-    public function programs(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Program::class);
+        return $this->hasMany(PEO::class);
     }
 }

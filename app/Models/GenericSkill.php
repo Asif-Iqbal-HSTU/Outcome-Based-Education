@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Designation extends Model
+class GenericSkill extends Model
 {
     use HasFactory;
     protected $guarded = ['created_at','updated_at'];
 
-    public function designation(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function faculty(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Designation::class);
+        return $this->belongsTo(Faculty::class);
     }
 }
