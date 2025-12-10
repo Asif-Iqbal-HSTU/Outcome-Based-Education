@@ -14,9 +14,4 @@ class Teacher extends Model
     {
         return $this->belongsTo(Department::class);
     }
-
-    public function designation(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
-        return $this->hasOne(Designation::class);
-    }
 }

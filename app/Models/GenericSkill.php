@@ -10,8 +10,8 @@ class GenericSkill extends Model
     use HasFactory;
     protected $guarded = ['created_at','updated_at'];
 
-    public function faculty(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function program(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Faculty::class);
+        return $this->belongsTo(Program::class);
     }
 }

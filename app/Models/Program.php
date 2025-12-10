@@ -39,4 +39,9 @@ class Program extends Model
     {
         return $this->hasMany(GenericSkill::class);
     }
+
+    public function courses(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Course::class);
+    }
 }
