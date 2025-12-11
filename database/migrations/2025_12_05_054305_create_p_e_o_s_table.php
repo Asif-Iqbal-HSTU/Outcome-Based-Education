@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('p_e_o_s', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('program_id')->constrained()->onDelete('cascade');
+            $table->foreignId('program_id')->constrained('programs')->onDelete('cascade');
             $table->decimal('peo_no');
             $table->text('peo_name');
             $table->timestamps();

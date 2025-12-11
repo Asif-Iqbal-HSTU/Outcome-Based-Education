@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('p_l_o_s', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('program_id')->constrained()->onDelete('cascade');
+            $table->foreignId('program_id')->constrained('programs')->onDelete('cascade');
             $table->decimal('plo_no');
             $table->text('plo_desc');
             $table->timestamps();

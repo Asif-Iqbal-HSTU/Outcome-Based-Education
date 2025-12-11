@@ -13,14 +13,11 @@ return new class extends Migration
     {
         Schema::create('c_l_o_s', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id')->constrained()->onDelete('cascade');
+            $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
             $table->decimal('clo_no');
             $table->text('clo_desc');
 
-            $table->foreignId('p_l_o_id')
-                ->references('id')
-                ->on('p_l_o_s')
-                ->onDelete('cascade');
+            $table->foreignId('p_l_o_id')->constrained('p_l_o_s')->onDelete('cascade');
 
             $table->timestamps();
         });
